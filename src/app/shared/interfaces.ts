@@ -2,7 +2,7 @@ export interface ICustomer {
     id: number;
     name: string;
     city: string;
-    orderTotal?: number;
+    orderTotal: number;    //? ei jostain syystä toiminut optionaalisen symbolina --> (orderTotal?: number;)
     customerSince: any;
 }
 

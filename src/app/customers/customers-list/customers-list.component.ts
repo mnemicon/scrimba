@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ICustomer } from 'src/app/shared/interfaces';
+import { FormsModule } from '@angular/forms';
+import { ICustomer } from '../../../app/shared/interfaces';
 
 @Component({
   selector: 'app-customers-list',
@@ -14,7 +15,7 @@ export class CustomersListComponent implements OnInit {
   set customers(value: ICustomer[]) {
     if (value) {
       this.filteredCustomers = this._customers = value;
-      this.calculateOrders;
+      this.calculateOrders();
     }
   }
 
@@ -34,8 +35,23 @@ export class CustomersListComponent implements OnInit {
     });
   }
 
+
+  filter(data: string) {
+    if (data) {
+      this.filteredCustomers = this.customers.filter((cust: ICustomer) => {
+        return cust.name.toLowerCase().indexOf(data.toLowerCase()) > -1 || 
+          cust.city.toLowerCase().indexOf(data.toLowerCase()) > -1 || 
+          cust.orderTotal.toString().indexOf(data) > -1;
+      });
+    } else {
+      this.filteredCustomers = this.customers;
+    }
+    this.calculateOrders();
+    }
+
+
+
   sort(prop: string) {
-    //A sorter service will handle the sorting (to be added later!)
-    
+    //A sorter service will handle the sorting (to be added later!)   
   }
 }
