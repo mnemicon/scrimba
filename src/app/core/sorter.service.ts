@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SorterService {
-  property: string = null;
+  property: string = "";
   direction: number = 1;
 
   constructor() { }

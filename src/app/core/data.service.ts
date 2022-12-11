@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';   //ei tunnistanut Observablea...
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';   //ei tunnistanut Observablea...poistettiin /Observable...
 import { map, catchError } from 'rxjs/operators';
 import { ICustomer, IOrder } from '../shared/interfaces';
 
