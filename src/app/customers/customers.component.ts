@@ -8,8 +8,8 @@ import { ICustomer } from '../shared/interfaces';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-  title: string | any;
-  people: ICustomer[] | any;
+  title!: string;
+  people: any[] = [];
 
   constructor(private dataService: DataService) { }
 

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';   //ei tunnistanut Observablea...poistettiin /Observable...
+import { Observable, throwError } from 'rxjs';   //ei tunnistanut Observablea...poistettiin /Observable...
 import { map, catchError } from 'rxjs/operators';
 import { ICustomer, IOrder } from '../shared/interfaces';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(
+  {  providedIn: 'root'}
+)
 export class DataService {
   baseUrl: string = 'assets/';
 
@@ -26,10 +26,10 @@ export class DataService {
     .pipe(
       map(customers => {
         let customer = customers.filter((cust: ICustomer) => cust.id === id);
-        return (customer && customer.length) ? customer[0] : null;
+        return (customer && customer.length) ? customer[0] : null as any;
       }),
       catchError(this.handleError)
-    );
+    )
   }
 
 //get all orders
@@ -49,9 +49,9 @@ export class DataService {
     console.error('server.error:', error);
     if (error.error instanceof Error) {
       const errMessage = error.error.message;
-      return Observable.throw(errMessage);
+      return throwError(errMessage);
         //if using LITESERVER use this instead: return Observable.throw(err.text() || 'backend server error');
     }
-    return Observable.throw(error || 'Node.js server error');
+    return throwError(error || 'Node.js server error');
   }
 }

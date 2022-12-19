@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { SorterService } from '../../core/sorter.service';
 import { ICustomer } from '../../../app/shared/interfaces';
+import { SorterService } from '../../core/sorter.service';
+import { FilterTextboxComponent } from './filter-textbox.component'; 
 
 @Component({
   selector: 'app-customers-list',
@@ -20,8 +20,8 @@ export class CustomersListComponent implements OnInit {
     }
   }
 
-  filteredCustomers: ICustomer[] = [];
-  customersOrderTotal: number | any;
+  filteredCustomers: any[] = [];
+  customersOrderTotal!: number;
   currencyCode: string = 'EUR';
 
   constructor(private sorterService: SorterService) { }
@@ -50,8 +50,7 @@ export class CustomersListComponent implements OnInit {
     this.calculateOrders();
     }
 
-
-
+    
   sort(prop: string) {
     this.sorterService.sort(this.filteredCustomers, prop);  
   }

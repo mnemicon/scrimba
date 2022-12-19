@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "scrimba"
+  "defaultProject": "scrimba",
+  "cli": {
+    "analytics": false
+  }
 }
