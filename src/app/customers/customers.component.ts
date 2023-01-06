@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../core/data.service';
 import { ICustomer } from '../shared/interfaces';
+import { CustomersRoutingModule } from './customers-routing.module';
 
 @Component({
   selector: 'app-customers',
