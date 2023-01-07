@@ -9,6 +9,7 @@ import { CustomersListComponent } from './customers/customers-list/customers-lis
 import { FilterTextboxComponent } from './customers/customers-list/filter-textbox.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { CustomersRoutingModule } from './customers/customers-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     FormsModule,
     CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CustomersRoutingModule
   ],
   exports: [SharedModule],
   providers: [],

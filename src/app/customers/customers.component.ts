@@ -22,7 +22,7 @@ export class CustomersComponent implements OnInit {
     //   {id: 1, name: "David Lee Roth", city: "Oulu", orderTotal: 12.20, customerSince: new Date(2012, 1, 31) },
     //   {id: 2, name: "Eddie van Halen", city: "Lahti", orderTotal: 2.80, customerSince: new Date(2002, 1, 31) },
     //   {id: 3, name: "alex van halen", city: "Seinäjoki", orderTotal: 5.00, customerSince: new Date(2021, 1, 31) },
-    //   {id: 4, name: "Anthony Benson", city: "Kuopio", orderTotal: 112.45, customerSince: new Date(2022, 1, 31) }
+    //   {id: 4, name: "michael Anthony", city: "Kuopio", orderTotal: 112.45, customerSince: new Date(2022, 1, 31) }
     // ];
   }
 }
