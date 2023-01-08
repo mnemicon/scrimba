@@ -10,13 +10,16 @@ import { FilterTextboxComponent } from './customers/customers-list/filter-textbo
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomersRoutingModule } from './customers/customers-routing.module';
+import { OrdersComponent } from './orders/orders.component';
+import { OrdersRoutingModule } from './orders/orders-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersComponent,
     CustomersListComponent,
-    FilterTextboxComponent
+    FilterTextboxComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { CustomersRoutingModule } from './customers/customers-routing.module';
     FormsModule,
     CoreModule,
     AppRoutingModule,
-    CustomersRoutingModule
+    CustomersRoutingModule,
+    OrdersRoutingModule
   ],
   exports: [SharedModule],
   providers: [],
