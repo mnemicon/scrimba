@@ -1,5 +1,6 @@
+import { identifierName, NullTemplateVisitor } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, ParamMap} from '@angular/router';
 import { DataService } from '../core/data.service';
 import { ICustomer, IOrder, IOrderItem } from '../shared/interfaces';
 
@@ -9,7 +10,6 @@ import { ICustomer, IOrder, IOrderItem } from '../shared/interfaces';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-
   orders: IOrder[] = [];
   customer!: ICustomer;
 
@@ -17,7 +17,7 @@ export class OrdersComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let id = parseInt.this.route.snapshot.paramMap.get('id');
+    let id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.dataService.getOrders(id).subscribe((orders: IOrder[]) => {
       this.orders = orders;
     });
